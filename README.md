@@ -33,7 +33,7 @@
   <p align="center">
     Explore the best properties in your city with ease. From cozy apartments to luxury villas, we help you discover the perfect place to call home.
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://property-now.vercel.app">View Live Demo</a>
     &middot;
   </p>
 </div>
