@@ -26,7 +26,6 @@ async function registerUser(req, res) {
     }
 
     if (password.length < 8) {
-      console.log(password.length);
       return res.status(400).json({
         message: "Password must be at least 8 characters long.",
       });
@@ -90,7 +89,7 @@ async function loginUser(req, res) {
 
     res.status(200).json({
       message: "User login successful",
-      token,
+      user:user
     });
   } catch {
     res.status(400).json({

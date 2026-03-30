@@ -2,10 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import Button from './Button'
 import { NavLink } from 'react-router'
 import { useUserContext } from '../context/user.context'
+import { getUserData } from '../services/getUserData'
 
 const Navbar = () => {
 
-    const { user, setUser } = useUserContext();
+    const { user, setuser, seterror} = useUserContext();
 
     const navbarRef = useRef(null)
 
@@ -18,7 +19,6 @@ const Navbar = () => {
             }
         });
     }, [])
-
 
     return (
         <nav className='fixed top-0 right-0 left-0 min-h-0 z-10

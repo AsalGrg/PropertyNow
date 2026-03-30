@@ -3,6 +3,7 @@ import Button from '../components/Button'
 import { NavLink, useNavigate } from 'react-router'
 import { toast, ToastContainer } from 'react-toastify'
 import loginUser from '../services/loginUser'
+import { useUserContext } from '../context/user.context'
 
 const LoginPage = () => {
 
@@ -10,6 +11,9 @@ const LoginPage = () => {
     const [password, setPassword] = useState("")
 
     const [isLoading, setisLoading] = useState(false)
+
+    const {setuser, seterror}= useUserContext();
+
 
     const navigate = useNavigate()
     async function submitLoginUser(e) {
@@ -23,8 +27,13 @@ const LoginPage = () => {
         try {
             const response = await loginUser(requestData);
             toast.success(response.data.message);
-            console.log(response.data)
             emptyInputFields();
+            console.log(response.data.user)
+
+            // setting context
+            setuser(response.data.user)
+            seterror(null)
+
             await delay(1200);
             navigate('/');
         } catch (err) {

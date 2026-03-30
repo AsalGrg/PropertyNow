@@ -13,6 +13,7 @@ const App = () => {
   const root = document.getElementById("root");
 
   ReactDOM.createRoot(root).render(
+
     <UserContentProvider>
       <BrowserRouter>
         <Routes>
@@ -23,6 +24,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
     </UserContentProvider>
+      
     ,
 
   );

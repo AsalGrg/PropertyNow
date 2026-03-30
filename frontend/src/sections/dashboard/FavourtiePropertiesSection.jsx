@@ -17,6 +17,7 @@ const FavourtiePropertiesSection = () => {
                 const response = await getFavouriteProperties();
                 const data = response.data;
                 setProperties(data.properties)
+                // console.log(data.properties)
             } catch (err) {
                 if (err.response.status === 401) {
                     navigate('/login')
@@ -25,11 +26,9 @@ const FavourtiePropertiesSection = () => {
                     toast.error(err.response.data.message)
                 }
             }
-
         }
         fetchProperties();
     }, [])
-
 
     async function removeFavourite(propertyId) {
         try {

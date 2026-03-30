@@ -13,9 +13,12 @@ export const UserContentProvider = ({children}) => {
     useEffect(() => {
         async function userData() {
             try{
+
+                console.log("THIS ISSS RUN")
                 const response= await getUserData();
                 setuser(response.data.user)
             }catch(err){
+                console.log(err)
                 setuser(null)
                 seterror(err)
             }
@@ -24,7 +27,7 @@ export const UserContentProvider = ({children}) => {
     }, [])
     
   return (
-    <UserContext.Provider value={{user, setuser, error}}>
+    <UserContext.Provider value={{user, setuser, error, seterror}}>
         {children}
     </UserContext.Provider>
   )

@@ -14,7 +14,6 @@ function isTokenValid(req){
     let decoded= null
     try{
         decoded = jwt.verify(token, process.env.JWT_SECRET_KEY)
-        console.log(decoded)
         return decoded;
     }catch{
         return decoded;

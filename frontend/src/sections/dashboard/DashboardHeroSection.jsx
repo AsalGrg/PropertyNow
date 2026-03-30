@@ -8,7 +8,8 @@ const DashboardHeroSection = () => {
     const { user, error } = useUserContext();
     const navigate = useNavigate()
     useEffect(() => {
-        if (error) {
+        if (error?.response.status===401) {
+            console.log("LOGGG")
             navigate('/login')
         }
     }, [error])
