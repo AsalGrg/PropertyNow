@@ -33,7 +33,7 @@
   <p align="center">
     Explore the best properties in your city with ease. From cozy apartments to luxury villas, we help you discover the perfect place to call home.
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://property-now.vercel.app">View Live Demo</a>
     &middot;
   </p>
 </div>
@@ -103,7 +103,7 @@ To run the application, after installing all the packages, you can enter followi
 
 ### For Frontend
 
-1. Start the application (use <bold>port: 5173</bold> for no CORS policy issue)
+1. Start the application (use <b>port: 5173</b> for no CORS policy issue)
    ```sh
    npm run dev
    ```
@@ -155,11 +155,11 @@ When a user visits the application without being logged in, the navigation bar d
   ![PropertyNow Register Screen Shot][product-register-success-screenshot]
 
 - #### User Login
-  Once the user logs in with valid credentials, the system generates a <bold>JWT (JSON Web Token)</bold> for authentication. This token is stored in the user's browser cookies and remains valid for 30 minutes.
+  Once the user logs in with valid credentials, the system generates a <b>JWT (JSON Web Token)</b> for authentication. This token is stored in the user's browser cookies and remains valid for 30 minutes.
 
 After successful login, the user is redirected to the Home page. The navigation bar is then updated to display the user's profile name instead of the Login and Sign Up buttons. From the navbar, the user can also access their Dashboard, where they can manage their account and activities.
 
-The stored JWT is automatically included with subsequent requests, allowing the application to verify the user's identity and grant access to authenticated features such as <bold>adding properties to favorites, dashboard</bold>.
+The stored JWT is automatically included with subsequent requests, allowing the application to verify the user's identity and grant access to authenticated features such as <b>adding properties to favorites, dashboard</b>.
 ![PropertyNow Login Screen Shot][product-token-screenshot]
 ![PropertyNow Login Screen Shot][product-login-screenshot]
 ![PropertyNow Login Screen Shot][product-navbar-logged-screenshot]
@@ -176,8 +176,8 @@ Once a user is logged in, they can view all property listings along with a love 
 
 Users can manage their favorite properties directly from the listing page:
 
-<bold>Add to Favorites</bold>: By clicking the unfilled heart icon, the property is added to the user's favorites list and the icon changes to filled, indicating that the property has been favorited.
-<bold>Remove from Favorites</bold>: If the property is already in the favorites list, clicking the filled heart icon will remove the property from favorites, and the icon will return to the unfilled state.
+<b>Add to Favorites</b>: By clicking the unfilled heart icon, the property is added to the user's favorites list and the icon changes to filled, indicating that the property has been favorited.
+<b>Remove from Favorites</b>: If the property is already in the favorites list, clicking the filled heart icon will remove the property from favorites, and the icon will return to the unfilled state.
 
 This feature allows users to quickly save and manage properties they are interested in for future reference.
 
@@ -187,8 +187,8 @@ This feature allows users to quickly save and manage properties they are interes
 Once a user is logged in, they can access their Dashboard by clicking on their profile name displayed in the navbar.
 
 The Dashboard provides a personalized view where users can manage and review their account information. It includes the following sections:
-<bold>User Details</bold>: Displays basic information about the user, such as their name and email.
-<bold>Favorite Properties</bold>: Shows a list of all properties that the user has added to their favorites. From this section, users can easily revisit properties they are interested in.
+<b>User Details</b>: Displays basic information about the user, such as their name and email.
+<b>Favorite Properties</b>: Shows a list of all properties that the user has added to their favorites. From this section, users can easily revisit properties they are interested in.
 
 This dashboard acts as a central place for users to view their profile information and manage their saved properties within the application.
 ![PropertyNow User Dashboard Screen Shot][product-user-dashboard-screenshot]
