@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+
+@theme {
+  --font-voyage: "Voyage", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+  --color-primary: #39FF14;
+  --color-accent: #058C42;
+  --color-white: #F3EFF5;
+  --color-black: #020202; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    @apply bg-white
+}
+.gap-small{
+    @apply gap-[clamp(1.5rem,1rem+6.25vw,2.5rem)]
+}
+
+.gap-big{
+    @apply gap-[clamp(1.5rem,1.0455rem+2.2727vw,2.5rem)]
+}
+
+.para-big{
+    @apply text-[clamp(1.5rem,1.2727rem+1.1364vw,2rem)]
+}
+.para{
+    @apply text-[clamp(1rem,0.7727rem+1.1364vw,1.5rem)]/[120%]
+}
+.para-small{
+    @apply text-[clamp(0.75rem,0.625rem+1.5625vw,1rem)]
+}
+.big-heading{
+    @apply text-[clamp(4rem,3.3182rem+3.4091vw,5.5rem)]/[90%] tracking-[-4%]
+}
+input{
+    @apply w-full px-2 h-16 rounded-md border-[#A29FA2] border-2 bg-[#ffffff] text-[clamp(1rem,0.7727rem+1.1364vw,1.5rem)]
+}
+.content {
+  @apply max-w-[1200px] mx-auto py-[3vh] lg:px-0 px-[2vh];
+}
+
+
+
