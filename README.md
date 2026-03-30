@@ -38,37 +38,12 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+![Product Name Screen Shot][product-screenshot]
 
 PropertyNow is a real estate application, that lets you browse, and choose favourite properties around you. You can register, login to your account, view your own dashboard. Looking for real estate has never been this easy
 
@@ -107,6 +82,7 @@ This is an example of how to list things you need to use the software and how to
    git clone https://github.com/AsalGrg/PropertyNow.git
    ```
 2. Change git remote url to avoid accidental pushes to base project
+
    ```sh
    git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
@@ -126,24 +102,31 @@ This is an example of how to list things you need to use the software and how to
 To run the application, after installing all the packages, you can enter following commands:
 
 ### For Frontend
-1. Start the application (port: 5173 for no CORS policy issue)
+
+1. Start the application (use <bold>port: 5173</bold> for no CORS policy issue)
    ```sh
    npm run dev
    ```
-### For Frontend
+
+### For Backend
+
 1. Start the application (with hot reload)
-  ```sh
-   npm run dev
-   ```
+
+```sh
+ npm run dev
+```
+
 2. Start the application (without hot reload)
-  ```sh
-   npm start
-   ```
 
-#### Registered User for quick test: 
+```sh
+ npm start
+```
+
+#### Registered User for quick test:
+
 _Username: John Doe_
+<br/>
 _Password: 12345678_
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,38 +134,75 @@ _Password: 12345678_
 
 ## Application Flow
 
-
 ### Initial Page
 
-At the initial loading of the application, home page will be displayed. In home page there is hero, and properties listing sections. Without login, visitors can can view all the properties listing.
+At the initial loading of the application, home page will be displayed. In home page there is hero, and properties listing sections. Without login, visitors can can view all the properties listing. The visitors can only view the properties, but cannot add to favorite unless they are logged in.
 
-[![Product Name Screen Shot][product-screenshot]]
-[![Product Name Screen Shot][product-screenshot]]
+![PropertyNow Screen Shot][product-screenshot]
+![PropertyNow Screen Shot][product-screenshot2]
+
+### Login & Signup Flow
+
+When a user visits the application without being logged in, the navigation bar displays Login and Sign Up options. Visitors can browse and explore properties, but certain features such as favoriting properties are restricted and require authentication.
+
+![PropertyNow Navbar Screen Shot][product-navbar-screenshot]
+
+- #### User Registration
+
+  New users can create an account through the Sign Up page by providing the required information.
+  After successful registration, the user is redirected to the Login page to authenticate their account.
+  ![PropertyNow Register Screen Shot][product-register-screenshot]
+  ![PropertyNow Register Screen Shot][product-register-success-screenshot]
+
+- #### User Login
+  Once the user logs in with valid credentials, the system generates a <bold>JWT (JSON Web Token)</bold> for authentication. This token is stored in the user's browser cookies and remains valid for 30 minutes.
+
+After successful login, the user is redirected to the Home page. The navigation bar is then updated to display the user's profile name instead of the Login and Sign Up buttons. From the navbar, the user can also access their Dashboard, where they can manage their account and activities.
+
+The stored JWT is automatically included with subsequent requests, allowing the application to verify the user's identity and grant access to authenticated features such as <bold>adding properties to favorites, dashboard</bold>.
+![PropertyNow Login Screen Shot][product-token-screenshot]
+![PropertyNow Login Screen Shot][product-login-screenshot]
+![PropertyNow Login Screen Shot][product-navbar-logged-screenshot]
+
+### Favorite/Unfavorite Properties
+
+Once a user is logged in, they can view all property listings along with a love (heart) icon displayed on each property card.
+
+- If the property has already been added to the user's favorites, the heart icon appears filled.
+  ![PropertyNow Property Favorite Screen Shot][product-property-favorite-screenshot]
+
+- If the property is not in the user's favorites, the heart icon appears unfilled.
+  ![PropertyNow Property Normal Screen Shot][product-property-normal-screenshot]
+
+Users can manage their favorite properties directly from the listing page:
+
+<bold>Add to Favorites</bold>: By clicking the unfilled heart icon, the property is added to the user's favorites list and the icon changes to filled, indicating that the property has been favorited.
+<bold>Remove from Favorites</bold>: If the property is already in the favorites list, clicking the filled heart icon will remove the property from favorites, and the icon will return to the unfilled state.
+
+This feature allows users to quickly save and manage properties they are interested in for future reference.
 
 
+### User dashboard
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+Once a user is logged in, they can access their Dashboard by clicking on their profile name displayed in the navbar.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+The Dashboard provides a personalized view where users can manage and review their account information. It includes the following sections:
+<bold>User Details</bold>: Displays basic information about the user, such as their name and email.
+<bold>Favorite Properties</bold>: Shows a list of all properties that the user has added to their favorites. From this section, users can easily revisit properties they are interested in.
+
+This dashboard acts as a central place for users to view their profile information and manage their saved properties within the application.
+![PropertyNow User Dashboard Screen Shot][product-user-dashboard-screenshot]
+![PropertyNow User Dashboard 2 Screen Shot][product-user-dashboard-2-screenshot]
 
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@linkedIn](https://www.linkedin.com/in/asal-gurung-505951291/) - gurung.asal.06@gamil.com.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-- []()
-- []()
-- []()
+Project Link: [https://github.com/AsalGrg/PropertyNow](https://github.com/AsalGrg/PropertyNow)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -200,6 +220,18 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/asal-gurung-505951291/
 [product-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774857452/Screenshot_2026-03-30_133832_hj4jkn.png
+[product-screenshot2]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774857451/Screenshot_2026-03-30_133920_dviejq.png
+[product-navbar-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774860993/NavbarInitial_vnu51o.png
+[product-register-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774861240/Screenshot_2026-03-30_144519_ylk17l.png
+[product-register-success-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774861180/Screenshot_2026-03-30_144416_rer1bw.png
+[product-token-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774862757/token_sjvyug.png
+[product-login-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774861512/Screenshot_2026-03-30_144951_kvjjwc.png
+[product-navbar-logged-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774861712/navbar_wbdj1v.png
+[product-property-favorite-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774862073/Screenshot_2026-03-30_145851_i3c4j2.png
+[product-property-normal-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774862087/Screenshot_2026-03-30_145926_pwg1wg.png
+[product-user-dashboard-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774862516/Screenshot_2026-03-30_150622_pucsk2.png
+[product-user-dashboard-2-screenshot]: https://res.cloudinary.com/dxbwk0z1y/image/upload/v1774862523/Screenshot_2026-03-30_150650_asmwnl.png
+
 
 <!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
 
