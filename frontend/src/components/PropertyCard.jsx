@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PropertyCard = ({ property, addFavoriteHandler, removeFavoriteHandler }) => {
+const PropertyCard = ({ property, addFavoriteHandler, removeFavoriteHandler, setIsClicked}) => {
     return (
         <div className='border-black/40 border rounded-md p-3 space-y-4
         hover:shadow-lg shadow-primary/40
@@ -29,6 +29,8 @@ const PropertyCard = ({ property, addFavoriteHandler, removeFavoriteHandler }) =
                             property.isFavourite 
                             ? removeFavoriteHandler(property._id) 
                             : addFavoriteHandler!==null && addFavoriteHandler(property._id)
+
+                            setIsClicked(true)
                         }}
                     >
                         {property.isFavourite ? (

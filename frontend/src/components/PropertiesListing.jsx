@@ -1,7 +1,7 @@
 import React from 'react'
 import PropertyCard from './PropertyCard'
 
-const PropertiesListing = ({ properties = [], addFavoriteHandler = null, removeFavoriteHandler,emptyText}) => {
+const PropertiesListing = ({ properties = [], addFavoriteHandler = null, removeFavoriteHandler,emptyText, setIsClicked}) => {
 
     return (
 
@@ -13,7 +13,9 @@ const PropertiesListing = ({ properties = [], addFavoriteHandler = null, removeF
                             <PropertyCard
                                 property={property}
                                 addFavoriteHandler={addFavoriteHandler}
-                                removeFavoriteHandler={removeFavoriteHandler} />
+                                removeFavoriteHandler={removeFavoriteHandler} 
+                                setIsClicked={setIsClicked}
+                                />
                         ))
                     }
                 </div>
@@ -28,15 +30,3 @@ const PropertiesListing = ({ properties = [], addFavoriteHandler = null, removeF
 }
 
 export default PropertiesListing
-
-
-{/* <div className='grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-6' >
-            {
-                properties.map(property => (
-                    <PropertyCard
-                        property={property}
-                        addFavoriteHandler={addFavoriteHandler}
-                        removeFavoriteHandler={removeFavoriteHandler} />
-                ))
-            }
-        </div> */}

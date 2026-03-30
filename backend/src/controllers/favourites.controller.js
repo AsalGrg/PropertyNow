@@ -52,8 +52,6 @@ async function removeFavourite(req, res) {
       });
     }
 
-    console.log("ssssss", decoded);
-
     const hasFavourite = await FavouritesModel.findOne({
       propertyId: propertyId,
       userId: decoded.id,
@@ -92,8 +90,6 @@ async function getUserFavourites(req, res) {
     let favourites = await FavouritesModel.find({
       userId: decoded.id,
     });
-
-    console.log(favourites);
 
     let properties = await PropertiesModel.find({
       _id: { $in: favourites.map((fav) => fav.propertyId) },
